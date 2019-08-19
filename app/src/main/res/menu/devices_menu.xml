@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/phone_mid_frame"
+        android:orderInCategory="0"
+        android:title="@string/phone_mid_frame" />
+    <item
+        android:id="@+id/knife_manufacture"
+        android:orderInCategory="1"
+        android:title="@string/knife_manufacture" />
+    <item
+        android:id="@+id/surveillance"
+        android:orderInCategory="2"
+        android:title="@string/surveillance" />
+
+</menu>
