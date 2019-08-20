@@ -6,17 +6,38 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ActivityRegister">
+
+    <com.example.robolink.CustomTitleBar
+        android:id="@+id/titlebar_register"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:leftTextColor = "#2196f3"></com.example.robolink.CustomTitleBar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#C7C7C7" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="13"
+        android:orientation="vertical">
     
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/register"/>
+        android:layout_margin="10dp"
+        android:text="@string/register"
+        android:textSize="18dp"
+        android:textColor="#000"
+        />
     
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
+        android:layout_margin="5dp">
 
         <EditText
             android:id="@+id/edit_code"
@@ -29,10 +50,11 @@
         <Button
             android:id="@+id/send_authentication_code"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
-            android:background="#2196f3"
+            android:background="@drawable/button_shape"
             android:text="获取验证码"
+            android:textSize="12dp"
             android:textColor="#fff"/>
 
     </LinearLayout>
@@ -41,8 +63,7 @@
         android:id="@+id/edit_regi_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_margin="5dp"
         android:hint="密码（6-12位数字字母组合）"
         android:singleLine="true"/>
 
@@ -50,18 +71,8 @@
         android:id="@+id/edit_regi_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_margin="5dp"
         android:hint="昵称"
-        android:singleLine="true"/>
-
-    <EditText
-        android:id="@+id/edit_regi_mail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:hint="邮箱"
         android:singleLine="true"/>
 
     <Button
@@ -69,10 +80,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="#2196f3"
+        android:layout_margin="20dp"
+        android:background="@drawable/button_shape"
         android:text="@string/register"
+        android:textSize="18dp"
         android:textColor="#fff"/>
-
+    </LinearLayout>
 </LinearLayout>

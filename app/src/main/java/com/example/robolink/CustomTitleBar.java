@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CustomTitleBar extends RelativeLayout{
 
@@ -67,6 +68,7 @@ public class CustomTitleBar extends RelativeLayout{
             @Override
             public void onClick(View view) {
                 click.leftClick();
+
             }
         });
         bar_right.setOnClickListener(new OnClickListener() {

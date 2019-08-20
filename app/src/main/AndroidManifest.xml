@@ -9,7 +9,8 @@
       android:roundIcon="@mipmap/ic_robolink_round"
       android:supportsRtl="true"
       android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-    <activity android:name=".ActivityLogin"></activity>
+    <activity android:name=".ActivityLogin"
+        android:launchMode="singleTask"></activity>
     <activity android:name=".ActivityRegister" />
     <activity
         android:name=".ActivityWelcome"

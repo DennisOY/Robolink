@@ -13,6 +13,11 @@ public class Device {
         this.imageID2 = imageID2;
     }
 
+    public Device(String name, int imageID) {
+        this.name = name;
+        this.imageID = imageID;
+    }
+
     public String getName() {
         return name;
     }

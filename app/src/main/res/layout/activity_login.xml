@@ -7,52 +7,77 @@
     android:orientation="vertical"
     tools:context=".ActivityLogin">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="密码"
-        android:textColor="#2196f3"/>
-
-    <EditText
-        android:id="@+id/edit_accout"
+    <com.example.robolink.CustomTitleBar
+        android:id="@+id/titlebar_login"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="请输入账号"
-        android:singleLine="true"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:leftTextColor = "#2196f3"></com.example.robolink.CustomTitleBar>
 
-    <EditText
-        android:id="@+id/edit_password"
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="请输入密码"
-        android:singleLine="true"/>
+        android:layout_height="1dp"
+        android:background="#C7C7C7" />
 
-    <CheckBox
-        android:id="@+id/password_remembered"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="记住密码"/>
-
-    <Button
-        android:id="@+id/btn_login"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="#2196f3"
-        android:text="登录"
-        android:textColor="#fff"/>
+        android:layout_height="0dp"
+        android:layout_weight="13"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_login2register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#fff"
-        android:layout_gravity="center"
-        android:text="注册新账号"
-        android:textColor="#2196f3"
-        android:textAlignment="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/login"
+            android:textSize="18dp"
+            android:textColor="#000" />
 
+        <EditText
+            android:id="@+id/edit_accout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:hint="请输入账号"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/edit_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:hint="请输入密码"
+            android:singleLine="true" />
+
+        <CheckBox
+            android:id="@+id/password_remembered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="记住密码" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/button_shape"
+            android:text="登录"
+            android:textSize="18dp"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/btn_login2register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#fff"
+            android:text="注册新账号"
+            android:textAlignment="center"
+            android:textColor="#2196f3" />
+    </LinearLayout>
 
 </LinearLayout>

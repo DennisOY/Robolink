@@ -142,7 +142,7 @@ public class FragmentSetting extends Fragment {
                 public void onClick(View view) {
                     int position = viewHolder.getAdapterPosition();
                     switch (position){
-                        case 0://读取位置，根据位置实现功能，是不是很机智
+                        case 0://读取位置，根据位置实现功能，是不是很机智,但还是不够机智，没能细分bar上的具体位置
                             startActivity(new Intent(getActivity(),ActivityWelcome.class));
                     }
                 }
@@ -160,7 +160,7 @@ public class FragmentSetting extends Fragment {
 
         @Override
         public int getItemCount() {
-            return devicelist.size();
+            return mdevicelist.size();
         }
     }
 }

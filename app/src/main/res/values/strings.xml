@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Robolink</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="fii">智能工业互联</string>
@@ -16,6 +15,7 @@
     <string name="login">登录</string>
     <string name="clear">清空</string>
     <string name="hack">骇入！</string>
+    <string name="back">Back</string>
 
     <string name="phone_mid_frame">手机中框</string>
     <string name="knife_manufacture">刀具加工线</string>
@@ -26,4 +26,24 @@
     <string name="setting">设置</string>
     <string name="customer_service">客服</string>
     <string name="help">帮助</string>
+
+    <string name="isolated_mode">孤岛模式</string>
+    <string name="tour_mode">参观模式</string>
+    <string name="order_mode">顺序模式</string>
+    <string name="distributed_mode">分布模式</string>
+    <string name="patrol_mode">巡逻模式</string>
+
+    <string name="CNC1_5_Axis">CNC1哈工大五轴</string>
+    <string name="CNC2_FOXNUM">CNC2FOXNUM三轴</string>
+    <string name="CNC2_FANUC">CNC2FANUC三轴</string>
+    <string name="FOX_BOT_1">FOXBOT1</string>
+    <string name="FOX_BOT_2">FOXBOT2</string>
+    <string name="FOX_BOT_3">FOXBOT3</string>
+    <string name="Googoltech_1">固高1</string>
+    <string name="Googoltech_2">固高2</string>
+    <string name="Googoltech_3">固高3</string>
+    <string name="Feeder">送料机</string>
+    <string name="ATM">ATM</string>
+    <string name="AGV1">AGV</string>
+    <string name="AGV2">AGV2</string>
 </resources>
