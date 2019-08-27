@@ -2,31 +2,36 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.robolink">
 
-  <application
-      android:allowBackup="true"
-      android:icon="@mipmap/ic_robolink"
-      android:label="@string/app_name"
-      android:roundIcon="@mipmap/ic_robolink_round"
-      android:supportsRtl="true"
-      android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-    <activity android:name=".ActivityLogin"
-        android:launchMode="singleTask"></activity>
-    <activity android:name=".ActivityRegister" />
-    <activity
-        android:name=".ActivityWelcome"
-        android:launchMode="singleTask" />
-    <activity android:name=".ActivitySplash">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_robolink"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_robolink_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".ActivityLanguage"></activity>
+        <activity android:name=".ActivityProfile" />
+        <activity android:name=".ActivityDevice" />
+        <activity android:name=".ActivityCamera" />
+        <activity android:name=".ActivityHelp" />
+        <activity android:name=".ActivityCustomerService" />
+        <activity android:name=".ActivitySetting" />
+        <activity android:name=".ActivityAbout" />
+        <activity
+            android:name=".ActivityLogin"
+            android:launchMode="singleTask" />
+        <activity android:name=".ActivityRegister" />
+        <activity
+            android:name=".ActivityWelcome"
+            android:launchMode="singleTask" />
+        <activity android:name=".ActivitySplash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
-    </activity>
-
-    <activity android:name=".ActivityMain">
-
-    </activity>
-
-  </application>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ActivityMain" />
+    </application>
 
 </manifest>

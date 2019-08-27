@@ -3,7 +3,7 @@
     android:id="@+id/custom_titlebar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@android:color/transparent"
+
     android:orientation="vertical">
 
     <LinearLayout

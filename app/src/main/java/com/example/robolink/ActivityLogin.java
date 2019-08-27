@@ -11,13 +11,15 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class ActivityLogin extends AppCompatActivity {
+public class ActivityLogin extends ActivityBase {
 
     private CustomTitleBar customTitleBar;
 
@@ -28,10 +30,12 @@ public class ActivityLogin extends AppCompatActivity {
     private String password;
 
     private Button btn_login;
-    private Button btn_to_register;
+    private TextView text_2register;
 
     private CheckBox rememberPasswordCheckBox;
+    private CheckBox rememberLoginStatus;
     private boolean isPasswordRemembered;
+
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
 
@@ -41,11 +45,14 @@ public class ActivityLogin extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         initView();
 
-        //自定义标题栏左侧view的监听事件
+        //自定义标题栏左侧view，即返回键的监听事件
+        //使用了自定义标题栏类中的接口，这样就可以自定义响应了
         customTitleBar.setOnViewClick(new CustomTitleBar.onViewClick() {
             @Override
             public void leftClick() {
-                startActivity(new Intent(ActivityLogin.this, ActivityWelcome.class));
+                //startActivity(new Intent(ActivityLogin.this, ActivityWelcome.class));
+                //相当于后退键功能，直接结束活动
+                finish();
             }
             @Override
             public void rightClick() {
@@ -65,10 +72,9 @@ public class ActivityLogin extends AppCompatActivity {
 
                 if(TextUtils.isEmpty(accountEditText.getText()) || TextUtils.isEmpty((passwordEditText.getText()))){
                     btn_login.setEnabled(false);
-                    btn_login.setBackgroundColor(0xffc7c7c7);
                 }else{
                     btn_login.setEnabled(true);//在这里设定按钮可用，只有两个输入栏都不为空的时候,有多少个输入栏就要设定多少次，好麻烦呀
-                    btn_login.setBackgroundColor(0xff2196f3);//代码设置颜色的N种方法，我都不会
+                    //btn_login.setBackgroundColor(0xff2196f3);//代码设置颜色的N种方法，我都不会
                 }
             }
 
@@ -83,17 +89,15 @@ public class ActivityLogin extends AppCompatActivity {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 //隐藏密码
-                passwordEditText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                //passwordEditText.setTransformationMethod(PasswordTransformationMethod.getInstance());
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if(TextUtils.isEmpty(accountEditText.getText()) || TextUtils.isEmpty((passwordEditText.getText()))){
                     btn_login.setEnabled(false);
-                    btn_login.setBackgroundColor(0xffc7c7c7);
                 }else{
                     btn_login.setEnabled(true);
-                    btn_login.setBackgroundColor(0xff2196f3);
                 }
             }
 
@@ -123,7 +127,7 @@ public class ActivityLogin extends AppCompatActivity {
                 password = passwordEditText.getText().toString();
                 // TODO: 2019/8/20 要更新账号密码的设定 
                 if(account.equals("admin") && password.equals(("123"))){//设定一个管理员的账号密码，以后这里要更新
-                    editor = preferences.edit();
+
                     if(rememberPasswordCheckBox.isChecked()){
                         editor.putBoolean("remember_password", true);//做一个标签文件，如果勾选了记住密码并登陆成功就会存储登录信息
                         editor.putString("account", account);
@@ -131,7 +135,13 @@ public class ActivityLogin extends AppCompatActivity {
                     }else{
                         editor.clear();
                     }
+                    if(rememberLoginStatus.isChecked()){
+                        editor.putBoolean("remember_login",true);
+                    }else{
+                        editor.putBoolean("remember_login", false);
+                    }
                     editor.commit();//一定要commit才有效哦，或者apply()
+
                     startActivity(new Intent(ActivityLogin.this, ActivityMain.class));
                     finish();
                 }else{
@@ -140,7 +150,8 @@ public class ActivityLogin extends AppCompatActivity {
             }
         });
 
-        btn_to_register.setOnClickListener(new View.OnClickListener() {
+        text_2register.setClickable(true);
+        text_2register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ActivityLogin.this, ActivityRegister.class));
@@ -152,19 +163,24 @@ public class ActivityLogin extends AppCompatActivity {
         customTitleBar = (CustomTitleBar) findViewById(R.id.titlebar_login);
         accountEditText = (EditText) findViewById(R.id.edit_accout) ;
         passwordEditText = (EditText) findViewById(R.id.edit_password);
-        rememberPasswordCheckBox = (CheckBox) findViewById(R.id.password_remembered);
-        btn_login = (Button) findViewById(R.id.btn_login);
-        btn_to_register = (Button) findViewById(R.id.btn_login2register);
 
-        customTitleBar.setLeftDrawable(R.mipmap.ic_back);
+        rememberPasswordCheckBox = (CheckBox) findViewById(R.id.password_remembered);
+        rememberLoginStatus = findViewById(R.id.status_remembered);
+
+        btn_login = (Button) findViewById(R.id.btn_login);
+        text_2register = findViewById(R.id.login2register);
+
+        //设置标题栏内容、字体大小
+        customTitleBar.setLeftDrawable(R.drawable.ic_out);
         customTitleBar.setLeftTextSize(18);
         customTitleBar.setLeftText(getResources().getString(R.string.back));
 
         btn_login.setEnabled(false);
-        btn_login.setBackgroundColor(0xffc7c7c7);
         passwordEditText.setText("");
         accountEditText.setText("");
 
-        preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        preferences = getSharedPreferences("login_info", MODE_PRIVATE);
+        editor = preferences.edit();
+        //preferences = PreferenceManager.getDefaultSharedPreferences(this);
     }
 }

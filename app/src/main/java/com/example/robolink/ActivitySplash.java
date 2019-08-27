@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class ActivitySplash extends AppCompatActivity implements ViewPager.OnPageChangeListener {
+public class ActivitySplash extends ActivityBase implements ViewPager.OnPageChangeListener {
 
     private ViewPager viewPager;
     private ArrayList<View> views = new ArrayList<>();

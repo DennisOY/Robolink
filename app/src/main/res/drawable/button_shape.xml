@@ -3,9 +3,9 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
     <!--设置背景色-->
-    <solid android:color="#2196f3" />
+    <solid android:color="#75B6F8" />
     <!--设置圆角-->
-    <corners android:radius="60dip" />
+    <corners android:radius="5dip" />
 
     <!--<stroke android:width="3dp" android:color="#00ff00" />-->
 </shape>

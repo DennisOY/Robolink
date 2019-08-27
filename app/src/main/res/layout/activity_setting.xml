@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ActivitySetting">
+
+    <com.example.robolink.CustomTitleBar
+        android:id="@+id/titlebar_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:centerTextColor="#000"
+        app:centerTitle="@string/setting"
+        app:centerTitleSize="18"
+        app:leftDrawable="@drawable/ic_out_black"
+        app:leftText="@string/me"
+        app:leftTextColor="#000"
+        app:leftTextSize="15"></com.example.robolink.CustomTitleBar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#C7C7C7" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="11"
+        android:orientation="vertical">
+
+        <com.example.robolink.CustomTitleBar
+            android:id="@+id/clean_bar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:leftDrawable="@mipmap/ic_clean_cache"
+            app:leftText="@string/clean_cache"
+            app:leftTextColor="#000"
+            app:rightText="@string/cache_size"
+            app:rightTextColor="#000"></com.example.robolink.CustomTitleBar>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="40dp"
+            android:background="#C5C5C5"/>
+
+        <com.example.robolink.CustomTitleBar
+            android:id="@+id/update_bar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:leftDrawable="@mipmap/ic_update"
+            app:leftText="@string/check_for_updates"
+            app:leftTextColor="#000"
+            app:rightDrawable="@mipmap/ic_back"></com.example.robolink.CustomTitleBar>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="40dp"
+            android:background="#C5C5C5"/>
+
+        <com.example.robolink.CustomTitleBar
+            android:id="@+id/language_bar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:leftDrawable="@mipmap/ic_language"
+            app:leftText="@string/language"
+            app:leftTextColor="#000"
+            app:rightDrawable="@mipmap/ic_back"></com.example.robolink.CustomTitleBar>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="40dp"
+            android:background="#C5C5C5"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -11,25 +11,47 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.VideoView;
+import android.widget.ViewFlipper;
 
-public class ActivityWelcome extends AppCompatActivity {
+public class ActivityWelcome extends ActivityBase {
 
-    private SharedPreferences.Editor write;
+    //private SharedPreferences.Editor write;
+    private SharedPreferences preferences;
+    private boolean isLoginStatusRemembered;
+
     private VideoView videoView;
+
+    private ViewFlipper viewFlipper;
+
+    private Button btn_register;
+    private Button btn_login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-        write = getSharedPreferences("data", MODE_PRIVATE).edit();
+        initView();
 
-        Button btn_register = (Button) findViewById(R.id.btn_to_register);
-        Button btn_login = (Button) findViewById(R.id.btn_to_login);
-        Button btn_clear = (Button) findViewById(R.id.btn_clear) ;
-        Button btn_to_fragment = (Button) findViewById(R.id.btn_to_fragment);
-        videoView = (VideoView) findViewById(R.id.start_video);
-        videoView.setVideoURI(Uri.parse( "android.resource://" + getPackageName()+  "/raw/vedio_start_big"));
+        //已经在布局中设置了自动开始
+        //viewFlipper.startFlipping();
+
+        //记住登录状态，直接进入主界面
+        isLoginStatusRemembered = preferences.getBoolean("remember_login", false);//记住后面是默认的
+        if(isLoginStatusRemembered) {
+            startActivity(new Intent(ActivityWelcome.this, ActivityMain.class));
+            finish();
+        }
+
+        //write = getSharedPreferences("data", MODE_PRIVATE).edit();
+
+
+/*        Button btn_clear = (Button) findViewById(R.id.btn_clear) ;
+        Button btn_to_fragment = (Button) findViewById(R.id.btn_to_fragment);*/
+
+//视频在这循环播放
+
+        videoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/raw/vedio_start_big"));
 
         videoView.start();
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -39,7 +61,6 @@ public class ActivityWelcome extends AppCompatActivity {
                 mediaPlayer.setLooping(true);
             }
         });
-
 
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +74,7 @@ public class ActivityWelcome extends AppCompatActivity {
                 startActivity(new Intent(ActivityWelcome.this, ActivityLogin.class));
             }
         });
-        btn_clear.setOnClickListener(new View.OnClickListener() {
+/*        btn_clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 write.clear();//清空用户登录的记录
@@ -68,6 +89,19 @@ public class ActivityWelcome extends AppCompatActivity {
                 intent.putExtra("小黑洞", 4);
                 startActivity(intent);
             }
-        });
+        });*/
+    }
+
+    private void initView(){
+
+        preferences = getSharedPreferences("login_info",MODE_PRIVATE);
+        isLoginStatusRemembered = false;
+
+        btn_register = findViewById(R.id.btn_to_register);
+        btn_login =  findViewById(R.id.btn_to_login);
+
+        videoView = findViewById(R.id.start_video);
+
+        viewFlipper = findViewById(R.id.viewflipper);
     }
 }

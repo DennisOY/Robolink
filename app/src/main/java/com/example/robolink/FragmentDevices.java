@@ -51,6 +51,7 @@ public class FragmentDevices extends Fragment {
     }
 
     private void initView(){
+        //设置tab标题
         mTabTitles[0] = getResources().getString(R.string.phone_mid_frame);
         mTabTitles[1] = getResources().getString(R.string.knife_manufacture);
         mTabTitles[2] = getResources().getString(R.string.surveillance);
@@ -95,6 +96,7 @@ public class FragmentDevices extends Fragment {
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+                //选中tab时，滑动页面
                 viewPager.setCurrentItem(tab.getPosition());
             }
 

@@ -12,7 +12,7 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class ActivityMain extends AppCompatActivity implements ViewPager.OnPageChangeListener {
+public class ActivityMain extends ActivityBase implements ViewPager.OnPageChangeListener {
 
     private CustomTitleBar customTitleBar;
     private BottomNavigationView navigationView;
@@ -59,11 +59,6 @@ public class ActivityMain extends AppCompatActivity implements ViewPager.OnPageC
         customTitleBar.setTitle(getResources().getString(R.string.home));
         customTitleBar.setTitleSize(18);//设置标题栏文字大小
 
-        //设置骇客的传送门，跳过登录直接进来
-        intent = getIntent();
-        int portal = intent.getIntExtra("小黑洞", 4);
-        viewPager.setCurrentItem(portal);
-
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @NonNull
             @Override
@@ -87,6 +82,11 @@ public class ActivityMain extends AppCompatActivity implements ViewPager.OnPageC
                 return 5;
             }
         });
+
+        //设置骇客的传送门，跳过登录直接抵达一个碎片
+        intent = getIntent();
+        int portal = intent.getIntExtra("直接去设备", 0);
+        viewPager.setCurrentItem(portal);
     }
 
     @Override

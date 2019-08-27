@@ -2,6 +2,7 @@
     <string name="app_name">Robolink</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="start">开始</string>
 
     <string name="fii">智能工业互联</string>
     <string name="home">首页</string>
@@ -9,13 +10,25 @@
     <string name="voice">语音</string>
     <string name="device_data">设备数据</string>
     <string name="me">我的</string>
+    <string name="chatrobot">聊天机器人</string>
+    <string name="personal_info">个人信息</string>
 
     <string name="register">注册</string>
     <string name="register_new_account">注册新账号</string>
     <string name="login">登录</string>
-    <string name="clear">清空</string>
+    <string name="logout">退出登录</string>
+    <string name="clean_cache">清空缓存</string>
+    <string name="cache_size">缓存大小</string>
     <string name="hack">骇入！</string>
     <string name="back">Back</string>
+    <string name="language">语言</string>
+    <string name="chinese_simplified">简体中文</string>
+    <string name="chinese_traditional">繁体中文</string>
+    <string name="english">English</string>
+    <string name="check_for_updates">检查更新</string>
+    <string name="profile_photo">头像</string>
+    <string name="nickname">昵称</string>
+    <string name="email">邮箱</string>
 
     <string name="phone_mid_frame">手机中框</string>
     <string name="knife_manufacture">刀具加工线</string>
@@ -23,6 +36,7 @@
 
     <string name="collection">收藏</string>
     <string name="about">关于</string>
+    <string name="about_us">关于我们</string>
     <string name="setting">设置</string>
     <string name="customer_service">客服</string>
     <string name="help">帮助</string>
@@ -46,4 +60,19 @@
     <string name="ATM">ATM</string>
     <string name="AGV1">AGV</string>
     <string name="AGV2">AGV2</string>
+
+    <string name="Time_Efficiency_Analysis">时间效率分析</string>
+    <string name="Equippment_Working_percentage">设备工作占比时间分析</string>
+    <string name="OEE_Efficiency_Analysis">OEE效率分析</string>
+    <string name="Manufacture_per_Hour">每小时加工件数</string>
+    <string name="Online_Analysis">开机统计</string>
+    <string name="Work">工作</string>
+    <string name="Sleep">待机</string>
+    <string name="Online">开机</string>
+    <string name="OffLine">离线</string>
+    <string name="Warning">报警</string>
+    <string name="Break">断开</string>
+    <string name="Electricity_on">通电</string>
+    <string name="Running">运行</string>
+
 </resources>

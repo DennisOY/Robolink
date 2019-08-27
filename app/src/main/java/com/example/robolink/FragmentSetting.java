@@ -1,8 +1,12 @@
 package com.example.robolink;
 
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,11 +15,15 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,20 +34,35 @@ import java.util.List;
  */
 public class FragmentSetting extends Fragment {
 
-    private RecyclerView recyclerView;
-    private DeviceAdapter deviceAdapter;
-    private List<Device> devicelist = new ArrayList<>();
+    private CustomTitleBar profile_Bar;
+    private CustomTitleBar about_Bar;
+    private CustomTitleBar collection_Bar;
+    private CustomTitleBar setting_Bar;
+    private CustomTitleBar customerservice_Bar;
+    private CustomTitleBar help_Bar;
+
+    private Button btn_back2welcome;
+//    private Button btn_back2splash;
+
+    private SharedPreferences preferences;
+    private SharedPreferences.Editor editor;
+/*    private SharedPreferences preferences_login;
+    private SharedPreferences.Editor editor_login;*/
+
+/*    private RecyclerView recyclerView;
+    //private DeviceAdapter deviceAdapter;
+    private List<Device> devicelist = new ArrayList<>();*/
 
     public FragmentSetting() {
         // Required empty public constructor
     }
 
 
-    @Override
+/*    @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         initDevices();//添加目录，在这里可以只添加一次
-    }
+    }*/
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -53,14 +76,122 @@ public class FragmentSetting extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        initView();
 
-        deviceAdapter = new DeviceAdapter(devicelist);
-        recyclerView = (RecyclerView) getActivity().findViewById(R.id.setting_recyclerview);
+        profile_Bar.setOnViewClick(new CustomTitleBar.onViewClick() {
+            @Override
+            public void leftClick() {
+
+            }
+
+            @Override
+            public void rightClick() {
+                startActivity(new Intent(getActivity(),ActivityProfile.class));
+            }
+        });
+
+        //关于栏监听事件
+        about_Bar.setOnViewClick(new CustomTitleBar.onViewClick() {
+            @Override
+            public void leftClick() {
+
+            }
+
+            @Override
+            public void rightClick() {
+                startActivity(new Intent(getActivity(),ActivityAbout.class));
+            }
+        });
+
+        //收藏条监听事件
+        collection_Bar.setOnViewClick(new CustomTitleBar.onViewClick() {
+            @Override
+            public void leftClick() {
+
+            }
+
+            @Override
+            public void rightClick() {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setMessage("该功能暂未开启");
+                builder.setPositiveButton("默认", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                builder.show();
+            }
+        });
+
+        //设置栏监听事件
+        setting_Bar.setOnViewClick(new CustomTitleBar.onViewClick() {
+            @Override
+            public void leftClick() {
+
+            }
+
+            @Override
+            public void rightClick() {
+                startActivity(new Intent(getActivity(),ActivitySetting.class));
+            }
+        });
+
+        //客服栏监听事件
+        customerservice_Bar.setOnViewClick(new CustomTitleBar.onViewClick() {
+            @Override
+            public void leftClick() {
+
+            }
+
+            @Override
+            public void rightClick() {
+                startActivity(new Intent(getActivity(),ActivityCustomerService.class));
+            }
+        });
+
+        //帮助栏监听事件
+        help_Bar.setOnViewClick(new CustomTitleBar.onViewClick() {
+            @Override
+            public void leftClick() {
+
+            }
+
+            @Override
+            public void rightClick() {
+                startActivity(new Intent(getActivity(),ActivityHelp.class));
+            }
+        });
+
+
+/*        deviceAdapter = new DeviceAdapter(devicelist, btn);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
-        recyclerView.setAdapter(deviceAdapter);
+        recyclerView.setAdapter(deviceAdapter);*/
+
+        btn_back2welcome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editor.putBoolean("remember_login", false);
+                editor.commit();
+                startActivity(new Intent(getActivity(), ActivityWelcome.class));
+            }
+        });
+
+/*        btn_back2splash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editor_login.clear();
+                editor.clear();
+                editor_login.commit();
+                editor.commit();
+                startActivity(new Intent(getActivity(), ActivitySplash.class));
+            }
+        });*/
 
 
-/*        Button btn_return = (Button) getActivity().findViewById(R.id.btn_return);
+
+       /* Button btn_return = (Button) getActivity().findViewById(R.id.btn_return);
         Button btn_to_mainpage = (Button) getActivity().findViewById(R.id.btn_to_mainpage);
         Button btn_back_to_register = (Button) getActivity().findViewById(R.id.btn_back_to_register);
         final ActivityMain activityMain = (ActivityMain) getActivity();
@@ -92,7 +223,7 @@ public class FragmentSetting extends Fragment {
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), ActivityRegister.class));
             }
-        });*/
+        });
     }
 
     private void initDevices(){
@@ -118,6 +249,8 @@ public class FragmentSetting extends Fragment {
             ImageView imageView;
             ImageView imageView2;
             TextView textView;
+            TextView textView2;
+            RelativeLayout customTitleBar;
 
             public ViewHolder(View view) {
                 super(view);
@@ -125,12 +258,17 @@ public class FragmentSetting extends Fragment {
                 imageView = (ImageView) view.findViewById(R.id.bar_left_view);
                 imageView2 = (ImageView) view.findViewById(R.id.bar_right_view);
                 textView = (TextView) view.findViewById(R.id.bar_left_text);
+                textView2 = view.findViewById(R.id.bar_title);
+                customTitleBar = view.findViewById(R.id.custom_titlebar);
             }
         }
 
-        public DeviceAdapter(List<Device> deviceList){
+
+        public DeviceAdapter(List<Device> deviceList, Button btn){
             mdevicelist = deviceList;
         }
+
+
 
         @NonNull
         @Override
@@ -143,7 +281,7 @@ public class FragmentSetting extends Fragment {
                     int position = viewHolder.getAdapterPosition();
                     switch (position){
                         case 0://读取位置，根据位置实现功能，是不是很机智,但还是不够机智，没能细分bar上的具体位置
-                            startActivity(new Intent(getActivity(),ActivityWelcome.class));
+                            Toast.makeText(getContext(),R.string.about,Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -162,5 +300,28 @@ public class FragmentSetting extends Fragment {
         public int getItemCount() {
             return mdevicelist.size();
         }
+    }*/
+
+
     }
+    private void initView(){
+
+        profile_Bar = getActivity().findViewById(R.id.profile_bar);
+        //profile_Bar.setBackground(getResources().getDrawable(R.drawable.user_banner));
+        about_Bar = getActivity().findViewById(R.id.about_bar);
+        collection_Bar = getActivity().findViewById(R.id.collection_bar);
+        setting_Bar = getActivity().findViewById(R.id.setting_bar);
+        customerservice_Bar = getActivity().findViewById(R.id.customerservice_bar);
+        help_Bar = getActivity().findViewById(R.id.help_bar);
+
+        btn_back2welcome = getActivity().findViewById(R.id.back2welcome);
+        //btn_back2splash = getActivity().findViewById(R.id.back2splash);
+        //recyclerView = getActivity().findViewById(R.id.setting_recyclerview);
+
+        preferences = getActivity().getSharedPreferences("login_info", Context.MODE_PRIVATE);
+        editor = preferences.edit();
+        /*preferences_login = getActivity().getSharedPreferences("data", Context.MODE_PRIVATE);
+        editor_login = preferences_login.edit();*/
+    }
+
 }

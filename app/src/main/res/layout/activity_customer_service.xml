@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ActivityCustomerService">
+
+    <com.example.robolink.CustomTitleBar
+        android:id="@+id/titlebar_customer_service"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:centerTextColor="#000"
+        app:centerTitle="@string/customer_service"
+        app:centerTitleSize="18"
+        app:leftDrawable="@drawable/ic_out"
+        app:leftText="@string/me"
+        app:leftTextColor="#000"
+        app:leftTextSize="15"></com.example.robolink.CustomTitleBar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#C7C7C7" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="11">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="还没做好，这是客服界面" />
+    </LinearLayout>
+
+</LinearLayout>

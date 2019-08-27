@@ -3,6 +3,7 @@ package com.example.robolink;
 public class Device {
 
     private String name;
+    private String name2;
     private int imageID;
     private int imageID2;
 
@@ -29,4 +30,5 @@ public class Device {
     public int getImageID2() {
         return imageID2;
     }
+
 }

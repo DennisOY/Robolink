@@ -15,33 +15,91 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true" />
 
-
-    <LinearLayout
+    <ViewFlipper
+        android:id="@+id/viewflipper"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="50dp">
+        android:autoStart="true"
+        android:flipInterval="2000"
+        android:inAnimation="@android:anim/fade_in">
 
-        <Button
-            android:id="@+id/btn_to_login"
+        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
-            android:background="#2196f3"
-            android:text="@string/login"
-            android:textColor="#fff" />
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:text="6+ 全自动无人自主熄灯工厂"
+            android:textColor="#fff"
+            android:textSize="21dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:text="11+ 覆盖国家"
+            android:textColor="#fff"
+            android:textSize="21dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="2,000,000+ 员工"
+            android:textColor="#fff"
+            android:textSize="21dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="3300+ 研发专利"
+            android:textColor="#fff"
+            android:textSize="21dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="40,000+ 技术人才"
+            android:textColor="#fff"
+            android:textSize="21dp"/>
+
+    </ViewFlipper>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="40dp">
+
 
         <Button
             android:id="@+id/btn_to_register"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
-            android:background="#2196f3"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button"
             android:text="@string/register"
             android:textColor="#fff" />
 
         <Button
+            android:id="@+id/btn_to_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_button"
+            android:text="@string/login"
+            android:textColor="#fff" />
+<!--        <Button
             android:id="@+id/btn_clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -57,7 +115,7 @@
             android:layout_marginRight="5dp"
             android:background="#2196f3"
             android:text="@string/hack"
-            android:textColor="#fff" />
+            android:textColor="#fff" />-->
     </LinearLayout>
 
 </RelativeLayout>

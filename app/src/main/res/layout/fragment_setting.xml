@@ -1,47 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".FragmentSetting">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/setting_recyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
-
     <!--
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:src="@drawable/startpic11" />
-
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/setting_recyclerview"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-                &lt;!&ndash;
-                <Button
-                    android:id="@+id/btn_return"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="返回登录" />
+                android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>-->
+    <com.example.robolink.CustomTitleBar
+        android:id="@+id/profile_bar"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/user_banner"
+        app:leftDrawable = "@mipmap/ic_about"
+        app:leftText = "null"
+        app:leftTextColor = "#fff"
+        app:rightDrawable = "@mipmap/ic_back"></com.example.robolink.CustomTitleBar>
 
-                <Button
-                    android:id="@+id/btn_to_mainpage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="返回主页" />
 
-                <Button
-                    android:id="@+id/btn_back_to_register"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="前往注册" />
-            </LinearLayout>-->
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <com.example.robolink.CustomTitleBar
+        android:id="@+id/about_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="#fff"
+        app:leftDrawable = "@mipmap/ic_about"
+        app:leftText = "@string/about"
+        app:leftTextColor = "#000"
+        app:rightDrawable = "@mipmap/ic_back"></com.example.robolink.CustomTitleBar>
+
+    <com.example.robolink.CustomTitleBar
+        android:id="@+id/collection_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="#fff"
+        app:leftDrawable = "@mipmap/ic_collection"
+        app:leftText = "@string/collection"
+        app:leftTextColor = "#000"
+        app:rightDrawable = "@mipmap/ic_back"></com.example.robolink.CustomTitleBar>
+
+    <com.example.robolink.CustomTitleBar
+        android:id="@+id/setting_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="#fff"
+        app:leftDrawable = "@mipmap/ic_setting"
+        app:leftText = "@string/setting"
+        app:leftTextColor = "#000"
+        app:rightDrawable = "@mipmap/ic_back"></com.example.robolink.CustomTitleBar>
+
+    <com.example.robolink.CustomTitleBar
+        android:id="@+id/customerservice_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="#fff"
+        app:leftDrawable = "@mipmap/ic_customer_service"
+        app:leftText = "@string/customer_service"
+        app:leftTextColor = "#000"
+        app:rightDrawable = "@mipmap/ic_back"></com.example.robolink.CustomTitleBar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="40dp"
+        android:background="#C5C5C5"/>
+
+    <com.example.robolink.CustomTitleBar
+        android:id="@+id/help_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#fff"
+        app:leftDrawable = "@mipmap/ic_help"
+        app:leftText = "@string/help"
+        app:leftTextColor = "#000"
+        app:rightDrawable = "@mipmap/ic_back"></com.example.robolink.CustomTitleBar>
+
+
+<!--    <Button
+        android:id="@+id/back2splash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#0689F1"
+        android:gravity="center"
+        android:text="@string/clean_cache"
+        android:textColor="#fff"
+        android:textSize="16dp" />-->
+
+    <Button
+        android:id="@+id/back2welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#FD4343"
+        android:gravity="center"
+        android:text="@string/logout"
+        android:textColor="#fff"
+        android:textSize="16dp" />
+
+</LinearLayout>

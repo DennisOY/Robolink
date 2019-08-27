@@ -33,28 +33,39 @@
             android:textSize="18dp"
             android:textColor="#000" />
 
-        <EditText
+        <com.example.robolink.CustomEditText
             android:id="@+id/edit_accout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_margin="5dp"
             android:hint="请输入账号"
             android:singleLine="true" />
 
-        <EditText
+        <com.example.robolink.CustomPasswordEditText
             android:id="@+id/edit_password"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_margin="5dp"
             android:hint="请输入密码"
             android:singleLine="true" />
 
-        <CheckBox
-            android:id="@+id/password_remembered"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="记住密码" />
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:id="@+id/password_remembered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="记住密码" />
+
+            <CheckBox
+                android:id="@+id/status_remembered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="自动登录"/>
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/btn_login"
@@ -64,17 +75,17 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="@drawable/button_shape"
+            android:background="@drawable/selector_button"
             android:text="登录"
             android:textSize="18dp"
             android:textColor="#fff" />
 
-        <Button
-            android:id="@+id/btn_login2register"
+        <TextView
+            android:id="@+id/login2register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="#fff"
+            android:layout_margin="5dp"
             android:text="注册新账号"
             android:textAlignment="center"
             android:textColor="#2196f3" />

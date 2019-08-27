@@ -31,39 +31,49 @@ public class CustomTitleBar extends RelativeLayout{
         super(context, attributeSet, defStyleAttr);
         LayoutInflater.from(context).inflate(R.layout.custom_titlebar, this);
         initView();
-        TypedArray array = context.obtainStyledAttributes(attributeSet, R.styleable.TitlebarView, defStyleAttr, 0);
+        TypedArray array = context.obtainStyledAttributes(attributeSet, R.styleable.CustomTitleBar, defStyleAttr, 0);
 
         int count = array.getIndexCount();
         for (int i = 0; i < count; i++){
             int attr = array.getIndex(i);
             switch (attr) {
-                case R.styleable.TitlebarView_leftTextColor:
+                case R.styleable.CustomTitleBar_leftTextColor:
                     bar_left_text.setTextColor(array.getColor(attr, Color.BLACK));
                     break;
-                case R.styleable.TitlebarView_leftDrawble:
+                case R.styleable.CustomTitleBar_leftDrawable:
                     bar_left_view.setImageResource(array.getResourceId(attr, 0));
                     break;
-                case R.styleable.TitlebarView_leftText:
+                case R.styleable.CustomTitleBar_leftText:
                     bar_left_text.setText(array.getString(attr));
                     break;
-                case R.styleable.TitlebarView_centerTextColor:
+                case R.styleable.CustomTitleBar_leftTextSize:
+                    bar_left_text.setTextSize(array.getInt(attr, 18));
+                    break;
+                case R.styleable.CustomTitleBar_centerTextColor:
                     my_bar_title.setTextColor(array.getColor(attr, Color.BLACK));
                     break;
-                case R.styleable.TitlebarView_centerTitle:
+                case R.styleable.CustomTitleBar_centerTitleSize:
+                    my_bar_title.setTextSize(array.getInt(attr,18));
+                    break;
+                case R.styleable.CustomTitleBar_centerTitle:
                     my_bar_title.setText(array.getString(attr));
                     break;
-                case R.styleable.TitlebarView_rightDrawable:
+                case R.styleable.CustomTitleBar_rightDrawable:
                     bar_right_view.setImageResource(array.getResourceId(attr, 0));
                     break;
-                case R.styleable.TitlebarView_rightText:
+                case R.styleable.CustomTitleBar_rightText:
                     bar_right_text.setText(array.getString(attr));
                     break;
-                case R.styleable.TitlebarView_rightTextColor:
+                case R.styleable.CustomTitleBar_rightTextSize:
+                    bar_right_text.setTextSize(array.getInt(attr, 18));
+                    break;
+                case R.styleable.CustomTitleBar_rightTextColor:
                     bar_right_text.setTextColor(array.getColor(attr, Color.BLACK));
                     break;
             }
         }
         array.recycle();
+        //设定点击事件
         bar_left.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
