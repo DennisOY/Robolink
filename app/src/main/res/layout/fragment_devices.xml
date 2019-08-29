@@ -18,11 +18,11 @@
         app:tabSelectedTextColor="#fff"
         app:tabTextColor="#666464"
         app:tabTextAppearance="@style/TabLayoutTextStyle"
-        app:tabBackground="@drawable/selector_tab"></com.google.android.material.tabs.TabLayout>
+        app:tabBackground="@drawable/selector_tab"/>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/devices_viewpager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="14"></androidx.viewpager.widget.ViewPager>
+        android:layout_weight="14"/>
 </LinearLayout>

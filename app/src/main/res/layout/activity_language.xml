@@ -32,13 +32,14 @@
         android:layout_weight="11"
         android:orientation="vertical">
 
-
-        <Button
-            android:id="@+id/btn_to_simplified_chinese"
+        <com.example.robolink.CustomTitleBar
+            android:id="@+id/chinese_simplified"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:gravity="left"
-            android:text="@string/chinese_simplified"/>
+            android:layout_marginLeft="50dp"
+            app:leftText="@string/chinese_simplified"
+            app:leftTextColor="#000"></com.example.robolink.CustomTitleBar>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -46,10 +47,11 @@
             android:background="#C5C5C5"/>
 
         <com.example.robolink.CustomTitleBar
-            android:id="@+id/update_bar"
+            android:id="@+id/chinese_traditional"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            app:leftText="@string/check_for_updates"
+            android:layout_marginLeft="50dp"
+            app:leftText="@string/chinese_traditional"
             app:leftTextColor="#000"></com.example.robolink.CustomTitleBar>
         <View
             android:layout_width="match_parent"
@@ -58,10 +60,11 @@
             android:background="#C5C5C5"/>
 
         <com.example.robolink.CustomTitleBar
-            android:id="@+id/language_bar"
+            android:id="@+id/english"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            app:leftText="@string/language"
+            android:layout_marginLeft="50dp"
+            app:leftText="@string/english"
             app:leftTextColor="#000"></com.example.robolink.CustomTitleBar>
         <View
             android:layout_width="match_parent"

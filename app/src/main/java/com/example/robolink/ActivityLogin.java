@@ -160,14 +160,15 @@ public class ActivityLogin extends ActivityBase {
     }
 
     public void initView(){
-        customTitleBar = (CustomTitleBar) findViewById(R.id.titlebar_login);
-        accountEditText = (EditText) findViewById(R.id.edit_accout) ;
-        passwordEditText = (EditText) findViewById(R.id.edit_password);
+        customTitleBar = findViewById(R.id.titlebar_login);
+        accountEditText = findViewById(R.id.edit_accout) ;
+        passwordEditText = findViewById(R.id.edit_password);
 
-        rememberPasswordCheckBox = (CheckBox) findViewById(R.id.password_remembered);
+        rememberPasswordCheckBox = findViewById(R.id.password_remembered);
         rememberLoginStatus = findViewById(R.id.status_remembered);
 
-        btn_login = (Button) findViewById(R.id.btn_login);
+        btn_login =  findViewById(R.id.btn_login);
+        btn_login.setEnabled(false);
         text_2register = findViewById(R.id.login2register);
 
         //设置标题栏内容、字体大小
@@ -175,7 +176,6 @@ public class ActivityLogin extends ActivityBase {
         customTitleBar.setLeftTextSize(18);
         customTitleBar.setLeftText(getResources().getString(R.string.back));
 
-        btn_login.setEnabled(false);
         passwordEditText.setText("");
         accountEditText.setText("");
 

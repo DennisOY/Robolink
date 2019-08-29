@@ -8,6 +8,7 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -164,5 +165,6 @@ public class CustomTitleBar extends RelativeLayout{
         void leftClick();
 
         void rightClick();
+
     }
 }
