@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ActivityRegister">
+    tools:context=".SupportFunctions.ActivityRegister">
 
-    <com.example.robolink.CustomTitleBar
+    <com.fii.robolink.CustomView.CustomTitleBar
         android:id="@+id/titlebar_register"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        app:leftTextColor = "#2196f3"></com.example.robolink.CustomTitleBar>
+        app:leftTextColor = "#2196f3"/>
 
     <View
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="@string/register"
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:textColor="#000"
         />
     
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp">
 
-        <com.example.robolink.CustomEditText
+        <com.fii.robolink.CustomView.CustomEditText
             android:id="@+id/edit_code"
             android:layout_width="0dp"
             android:layout_height="50dp"
@@ -59,23 +59,31 @@
 
     </LinearLayout>
 
-    <com.example.robolink.CustomPasswordEditText
-        android:id="@+id/edit_regi_password"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="5dp"
-        android:hint="密码（6-12位数字字母组合）"
-        android:singleLine="true"/>
+        <com.fii.robolink.CustomView.CustomEditText
+            android:id="@+id/edit_regi_name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:hint="昵称"
+            android:singleLine="true" />
 
-    <com.example.robolink.CustomEditText
-        android:id="@+id/edit_regi_name"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="5dp"
-        android:hint="昵称"
-        android:singleLine="true"/>
+        <com.fii.robolink.CustomView.CustomEditText
+            android:id="@+id/edit_regi_mail"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:hint="@string/email"
+            android:singleLine="true" />
 
-    <Button
+        <com.fii.robolink.CustomView.CustomPasswordEditText
+            android:id="@+id/edit_regi_password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:hint="密码（6-12位数字字母组合）"
+            android:singleLine="true" />
+
+        <Button
         android:id="@+id/btn_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

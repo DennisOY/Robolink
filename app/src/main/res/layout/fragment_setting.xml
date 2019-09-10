@@ -5,24 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".FragmentSetting">
-    <!--
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/setting_recyclerview"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>-->
-    <com.example.robolink.CustomTitleBar
+    tools:context=".MainFunctions.FragmentSetting">
+
+    <com.fii.robolink.CustomView.CustomTitleBar
         android:id="@+id/profile_bar"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:background="@drawable/user_banner"
         app:leftDrawable = "@mipmap/ic_about"
-        app:leftText = "null"
+        app:leftText = "null\nnull"
         app:leftTextColor = "#fff"
-        app:rightDrawable = "@mipmap/ic_back"></com.example.robolink.CustomTitleBar>
+        app:rightDrawable = "@mipmap/ic_back"/>
 
 
-    <com.example.robolink.CustomTitleBar
+    <com.fii.robolink.CustomView.CustomTitleBar
         android:id="@+id/about_bar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -31,9 +27,9 @@
         app:leftDrawable = "@mipmap/ic_about"
         app:leftText = "@string/about"
         app:leftTextColor = "#000"
-        app:rightDrawable = "@mipmap/ic_back"></com.example.robolink.CustomTitleBar>
+        app:rightDrawable = "@mipmap/ic_back"/>
 
-    <com.example.robolink.CustomTitleBar
+    <com.fii.robolink.CustomView.CustomTitleBar
         android:id="@+id/collection_bar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -42,9 +38,9 @@
         app:leftDrawable = "@mipmap/ic_collection"
         app:leftText = "@string/collection"
         app:leftTextColor = "#000"
-        app:rightDrawable = "@mipmap/ic_back"></com.example.robolink.CustomTitleBar>
+        app:rightDrawable = "@mipmap/ic_back"/>
 
-    <com.example.robolink.CustomTitleBar
+    <com.fii.robolink.CustomView.CustomTitleBar
         android:id="@+id/setting_bar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -53,9 +49,9 @@
         app:leftDrawable = "@mipmap/ic_setting"
         app:leftText = "@string/setting"
         app:leftTextColor = "#000"
-        app:rightDrawable = "@mipmap/ic_back"></com.example.robolink.CustomTitleBar>
+        app:rightDrawable = "@mipmap/ic_back"/>
 
-    <com.example.robolink.CustomTitleBar
+    <com.fii.robolink.CustomView.CustomTitleBar
         android:id="@+id/customerservice_bar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -64,7 +60,7 @@
         app:leftDrawable = "@mipmap/ic_customer_service"
         app:leftText = "@string/customer_service"
         app:leftTextColor = "#000"
-        app:rightDrawable = "@mipmap/ic_back"></com.example.robolink.CustomTitleBar>
+        app:rightDrawable = "@mipmap/ic_back"/>
 
     <View
         android:layout_width="match_parent"
@@ -72,7 +68,7 @@
         android:layout_marginLeft="40dp"
         android:background="#C5C5C5"/>
 
-    <com.example.robolink.CustomTitleBar
+    <com.fii.robolink.CustomView.CustomTitleBar
         android:id="@+id/help_bar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -80,19 +76,7 @@
         app:leftDrawable = "@mipmap/ic_help"
         app:leftText = "@string/help"
         app:leftTextColor = "#000"
-        app:rightDrawable = "@mipmap/ic_back"></com.example.robolink.CustomTitleBar>
-
-
-<!--    <Button
-        android:id="@+id/back2splash"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="#0689F1"
-        android:gravity="center"
-        android:text="@string/clean_cache"
-        android:textColor="#fff"
-        android:textSize="16dp" />-->
+        app:rightDrawable = "@mipmap/ic_back"/>
 
     <Button
         android:id="@+id/back2welcome"
@@ -103,6 +87,6 @@
         android:gravity="center"
         android:text="@string/logout"
         android:textColor="#fff"
-        android:textSize="16dp" />
+        android:textSize="16sp" />
 
 </LinearLayout>

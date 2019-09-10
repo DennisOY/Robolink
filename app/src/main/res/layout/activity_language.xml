@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ActivityLanguage">
+    tools:context=".SupportFunctions.ActivityLanguage">
 
 
-    <com.example.robolink.CustomTitleBar
+    <com.fii.robolink.CustomView.CustomTitleBar
         android:id="@+id/titlebar_language"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -19,7 +19,7 @@
         app:leftDrawable="@drawable/ic_out_black"
         app:leftText="@string/me"
         app:leftTextColor="#000"
-        app:leftTextSize="15"></com.example.robolink.CustomTitleBar>
+        app:leftTextSize="15"></com.fii.robolink.CustomView.CustomTitleBar>
 
     <View
         android:layout_width="match_parent"
@@ -32,13 +32,13 @@
         android:layout_weight="11"
         android:orientation="vertical">
 
-        <com.example.robolink.CustomTitleBar
+        <com.fii.robolink.CustomView.CustomTitleBar
             android:id="@+id/chinese_simplified"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="50dp"
             app:leftText="@string/chinese_simplified"
-            app:leftTextColor="#000"></com.example.robolink.CustomTitleBar>
+            app:leftTextColor="#000"></com.fii.robolink.CustomView.CustomTitleBar>
 
         <View
             android:layout_width="match_parent"
@@ -46,26 +46,26 @@
             android:layout_marginLeft="40dp"
             android:background="#C5C5C5"/>
 
-        <com.example.robolink.CustomTitleBar
+        <com.fii.robolink.CustomView.CustomTitleBar
             android:id="@+id/chinese_traditional"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="50dp"
             app:leftText="@string/chinese_traditional"
-            app:leftTextColor="#000"></com.example.robolink.CustomTitleBar>
+            app:leftTextColor="#000"></com.fii.robolink.CustomView.CustomTitleBar>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginLeft="40dp"
             android:background="#C5C5C5"/>
 
-        <com.example.robolink.CustomTitleBar
+        <com.fii.robolink.CustomView.CustomTitleBar
             android:id="@+id/english"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="50dp"
             app:leftText="@string/english"
-            app:leftTextColor="#000"></com.example.robolink.CustomTitleBar>
+            app:leftTextColor="#000"></com.fii.robolink.CustomView.CustomTitleBar>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"

@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ActivityLogin">
+    tools:context=".SupportFunctions.ActivityLogin">
 
-    <com.example.robolink.CustomTitleBar
+    <com.fii.robolink.CustomView.CustomTitleBar
         android:id="@+id/titlebar_login"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        app:leftTextColor = "#2196f3"></com.example.robolink.CustomTitleBar>
+        app:leftTextColor = "#2196f3"></com.fii.robolink.CustomView.CustomTitleBar>
 
     <View
         android:layout_width="match_parent"
@@ -33,7 +33,7 @@
             android:textSize="18dp"
             android:textColor="#000" />
 
-        <com.example.robolink.CustomEditText
+        <com.fii.robolink.CustomView.CustomEditText
             android:id="@+id/edit_accout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -41,7 +41,7 @@
             android:hint="请输入账号"
             android:singleLine="true" />
 
-        <com.example.robolink.CustomPasswordEditText
+        <com.fii.robolink.CustomView.CustomPasswordEditText
             android:id="@+id/edit_password"
             android:layout_width="match_parent"
             android:layout_height="50dp"

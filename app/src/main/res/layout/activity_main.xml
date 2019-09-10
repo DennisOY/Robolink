@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ActivityMain">
+    tools:context=".SupportFunctions.ActivityMain">
 
-    <com.example.robolink.CustomTitleBar
+    <com.fii.robolink.CustomView.CustomTitleBar
         android:id="@+id/bar_view"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -20,7 +20,7 @@
         android:background="#C7C7C7"/>
 
 
-    <com.example.robolink.CustomViewPager
+    <com.fii.robolink.CustomView.CustomViewPager
         android:id="@+id/viewpager_main"
         android:layout_width="match_parent"
         android:layout_height="0dp"

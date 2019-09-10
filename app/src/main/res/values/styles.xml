@@ -5,4 +5,10 @@
     <style name="TabLayoutTextStyle">
         <item name="android:textSize">18sp</item>
     </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat">
+        <item name="android:windowBackground">@drawable/start_screen</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 </resources>

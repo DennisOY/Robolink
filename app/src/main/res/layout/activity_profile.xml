@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ActivityProfile">
+    tools:context=".SupportFunctions.ActivityProfile">
 
-    <com.example.robolink.CustomTitleBar
+    <com.fii.robolink.CustomView.CustomTitleBar
         android:id="@+id/titlebar_profile"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -18,7 +18,7 @@
         app:leftDrawable="@drawable/ic_out_black"
         app:leftText="@string/me"
         app:leftTextColor="#000"
-        app:leftTextSize="15"></com.example.robolink.CustomTitleBar>
+        app:leftTextSize="15"></com.fii.robolink.CustomView.CustomTitleBar>
 
     <View
         android:layout_width="match_parent"
@@ -31,14 +31,14 @@
         android:layout_weight="11"
         android:orientation="vertical">
 
-        <com.example.robolink.CustomTitleBar
+        <com.fii.robolink.CustomView.CustomTitleBar
             android:id="@+id/profile_photo"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_margin = "10dp"
             app:leftText="@string/profile_photo"
             app:leftTextColor="#000"
-            app:rightDrawable="@drawable/ic_me"></com.example.robolink.CustomTitleBar>
+            app:rightDrawable="@drawable/ic_me"></com.fii.robolink.CustomView.CustomTitleBar>
 
         <View
             android:layout_width="match_parent"
@@ -46,14 +46,14 @@
             android:layout_marginLeft="60dp"
             android:background="#C5C5C5"/>
 
-        <com.example.robolink.CustomTitleBar
+        <com.fii.robolink.CustomView.CustomTitleBar
             android:id="@+id/nickname"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_margin = "10dp"
             app:leftText="@string/nickname"
             app:leftTextColor="#000"
-            app:rightText= "null" ></com.example.robolink.CustomTitleBar>
+            app:rightText= "null" ></com.fii.robolink.CustomView.CustomTitleBar>
 
         <View
             android:layout_width="match_parent"
@@ -61,14 +61,14 @@
             android:layout_marginLeft="60dp"
             android:background="#C5C5C5"/>
 
-        <com.example.robolink.CustomTitleBar
+        <com.fii.robolink.CustomView.CustomTitleBar
             android:id="@+id/profile_email"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_margin = "10dp"
             app:leftText="@string/email"
             app:leftTextColor="#000"
-            app:rightText="null"></com.example.robolink.CustomTitleBar>
+            app:rightText="null"></com.fii.robolink.CustomView.CustomTitleBar>
 
         <View
             android:layout_width="match_parent"

@@ -1,14 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DFragmentSurveilance">
+    tools:context=".MainFunctions.DFragmentSurveilance">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:padding="5dp"
+        app:cardCornerRadius="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/surveillance_tablayout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#979393"
+                app:tabIndicatorHeight="0dp"
+                app:tabSelectedTextColor="#063DC0"
+                app:tabTextColor="#fff"
+                app:tabTextAppearance="@style/TabLayoutTextStyle"
+                app:tabBackground="@drawable/selector_survalliance_tab"/>
+
+
+            <com.fii.robolink.CustomView.CustomViewPager
+                android:id="@+id/surveillance_viewpager"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

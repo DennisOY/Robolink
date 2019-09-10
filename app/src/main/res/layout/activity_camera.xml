@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityCamera">
+    tools:context=".MainFunctions.ActivityCamera"
+    android:orientation="vertical">
+
+    <com.fii.robolink.CustomView.CustomTitleBar
+        android:id="@+id/titlebar_shot"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:centerTextColor="#000"
+        app:centerTitle="@string/shot"
+        app:centerTitleSize="18"
+        app:leftDrawable="@drawable/ic_out_black"
+        app:leftText="@string/shot"
+        app:leftTextColor="#000"
+        app:leftTextSize="15"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#C7C7C7"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="还没做好，这是摄像头界面"/>
+        android:id="@+id/camera_tag"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="11"
+        android:layout_gravity="center"
+        android:background="#E2DDDD"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

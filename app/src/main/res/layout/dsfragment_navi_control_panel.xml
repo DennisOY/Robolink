@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="当前导轨模式："
+            android:gravity="center"
+            android:textColor="#063DC0"/>
+
+        <Switch
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:thumb="@drawable/switch_on_shape"
+            android:track="@drawable/switch_track_on_shape"
+            android:showText="true"
+            android:textOff="高速模式"
+            android:textOn="低速模式"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+            android:text="加速参数设置："
+            android:gravity="center"
+            android:textColor="#063DC0"/>
+
+        <Button
+            android:id="@+id/btn_accelarate_setting"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="25dp"
+            android:background="@drawable/survalliance_control_panel_button"
+            android:text="5"
+            android:textColor="#000"
+            android:gravity="center"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="高速参数设置："
+            android:textColor="#063DC0" />
+
+        <Button
+            android:id="@+id/btn_low_speed_setting"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="25dp"
+            android:background="@drawable/survalliance_control_panel_button"
+            android:text="320"
+            android:textColor="#000"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=" 导轨移动到： "
+            android:textColor="#063DC0" />
+
+        <Switch
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:showText="true"
+            android:textOff="左端"
+            android:textOn="右端"
+            android:thumb="@drawable/switch_on_shape"
+            android:track="@drawable/switch_track_on_shape" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:src="@drawable/control_panel" />
+
+</LinearLayout>

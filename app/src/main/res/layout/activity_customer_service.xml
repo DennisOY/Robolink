@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ActivityCustomerService">
+    tools:context=".SupportFunctions.ActivityCustomerService">
 
-    <com.example.robolink.CustomTitleBar
+    <com.fii.robolink.CustomView.CustomTitleBar
         android:id="@+id/titlebar_customer_service"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -41,7 +41,7 @@
         android:layout_height="50dp"
         android:layout_alignParentBottom="true">
 
-        <com.example.robolink.CustomEditText
+        <com.fii.robolink.CustomView.CustomEditText
             android:id="@+id/edit_question"
             android:layout_width="0dp"
             android:layout_height="match_parent"

@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ActivityAbout">
+    tools:context=".SupportFunctions.ActivityAbout">
 
-    <com.example.robolink.CustomTitleBar
+    <com.fii.robolink.CustomView.CustomTitleBar
         android:id="@+id/titlebar_about"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -18,7 +18,7 @@
         app:leftDrawable="@drawable/ic_out_black"
         app:leftText="@string/me"
         app:leftTextColor="#000"
-        app:leftTextSize = "15"></com.example.robolink.CustomTitleBar>
+        app:leftTextSize = "15"></com.fii.robolink.CustomView.CustomTitleBar>
 
     <View
         android:layout_width="match_parent"
